@@ -85,4 +85,6 @@ Correlated subqueris: [YouTube](https://www.youtube.com/watch?v=0ETfzlAQqBQ) or 
 	For example, there are two records `CompanyName` = 'A Great Bicycle Company'
 	So, for this compane only record with `CustomerID` = 29872 should be returned.
 
+	![11111](https://github.com/dzubenco/sql-training/assets/74211642/42cdf4a3-8295-46a5-bc31-a6265510f5cf)
+
 	Please provide the whole query as the answer
