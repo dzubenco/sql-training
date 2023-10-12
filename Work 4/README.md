@@ -5,11 +5,11 @@
 Check out the following videos and answer the questions below:
 
 
-Group By and Having: [YouTube](https://www.youtube.com/watch?v=oWkvHodS9cA) or [Here](https://raw.githubusercontent.com/dzubenco/sql-training/main/Work%201/Resources/SQL%20Server%20Queries%20Part%201%20-%20Writing%20Basic%20Queries.mp4)
+Group By and Having: [YouTube](https://www.youtube.com/watch?v=oWkvHodS9cA) or [Here](https://raw.githubusercontent.com/dzubenco/sql-training/main/Work%204/Resources/SQL%20Server%20Queries%20Part%2010%20-%20GROUP%20BY%20and%20HAVING.mp4)
 
-Subqueries: [YouTube](https://www.youtube.com/watch?v=5KXbdkv9hEM) or [Here](https://raw.githubusercontent.com/dzubenco/sql-training/main/Work%201/Resources/SQL%20Server%20Queries%20Part%202%20-%20ORDER%20BY%20(Sorting%20in%20Queries).mp4)
+Subqueries: [YouTube](https://www.youtube.com/watch?v=5KXbdkv9hEM) or [Here](https://raw.githubusercontent.com/dzubenco/sql-training/main/Work%204/Resources/SQL%20Server%20Queries%20Part%2011%20-%20Subqueries.mp4)
 
-Correlated subqueris: [YouTube](https://www.youtube.com/watch?v=0ETfzlAQqBQ) or [Here](https://raw.githubusercontent.com/dzubenco/sql-training/main/Work%201/Resources/SQL%20Server%20Queries%20Part%203%20-%20WHERE%20(Criteria%20in%20Queries).mp4)
+Correlated subqueris: [YouTube](https://www.youtube.com/watch?v=0ETfzlAQqBQ) or [Here](https://raw.githubusercontent.com/dzubenco/sql-training/main/Work%204/Resources/SQL%20Server%20Queries%20Part%2012%20-%20Correlated%20Subqueries.mp4)
 
 
 ---
