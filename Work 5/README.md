@@ -1,57 +1,42 @@
-<h2 align="center">Work #1</h2>
+<h2 align="center">Work #5</h2>
 
 ---
 
-Check out the following videos and answer the questions below:
+<h2 align="center">Exercises</h2>
 
+* Table `HumanResources.Employee` from `AdventureWorks2019` database contains a field called `LoginID`. It is filled with the data using the pattern [db_name]\[username] as shown at the screenshot below. Write a query which returns usernames only (data after "\" symbol) as shown at highlighted part of the screenshot
 
-Basic queries: [YouTube](https://youtu.be/2-1XQHAgDsM) or [Here](https://raw.githubusercontent.com/dzubenco/sql-training/main/Work%201/Resources/SQL%20Server%20Queries%20Part%201%20-%20Writing%20Basic%20Queries.mp4)
+* Check the content of `Person.Person`, `Person.PersonPhone` and `Person.PhoneNumberType` tables from  `AdventureWorks2019` database. Write a query that shows each person's First Name, Last Name, Phone Number, but only for the recors with "Employee" Person Type and "Work" Phone Type (please do not "hardcode" the phone type, use subquery or join instead)
 
-ORDER BY clause: [YouTube](https://youtu.be/PG1CtiaNX64) or [Here](https://raw.githubusercontent.com/dzubenco/sql-training/main/Work%201/Resources/SQL%20Server%20Queries%20Part%202%20-%20ORDER%20BY%20(Sorting%20in%20Queries).mp4)
+* *Prerequisite*: run the following query in the `AdventureWorks2019` database connection script:
+	
+	```
+	delete from Person.EmailAddress where BusinessEntityID between 286 and 298;
+	```
+	
+	Then using tables `Person.Person` and `Person.EmailAddress` write a query which will show all the fields from the `Person` table only for the entries which does not have an email set up in `EmailAddress` table.
+	
+* *Prerequisite*: run the following query in AdventureWorks2019 database :
 
-Criteria in queries: [YouTube](https://youtu.be/_n_JQlp5UZw) or [Here](https://raw.githubusercontent.com/dzubenco/sql-training/main/Work%201/Resources/SQL%20Server%20Queries%20Part%203%20-%20WHERE%20(Criteria%20in%20Queries).mp4)
+	```
+	Update HumanResources.JobCandidate set BusinessEntityID = 212 where jobCandidateId = 6;
+	```
+	
+	Table `HumanResources.JobCandidate` contains info about candidates. Entries with non-NULL `BusinessEntityID` field already have an interviewer assigned - this `BusinessEntityID` represents interviewer's ID.
 
+	So, using the following tables:
 
----
+	`HumanResources.JobCandidate`
+	`HumanResources.Employee`
+	`Person.Person`
+	`Person.PersonPhone`
+	`Person.PhoneNumberType`
 
-<h2 align="center">Questions</h2>
+	Write a query which returns info about all currently assigned interviewers in `JobCandidate` table: their `FirstName` and `LastName`, and a `PhoneNumber` if the type of PhoneNumber is "Work"; if it's not "Work" - default Phone Number to '8-800-555-35-35'
+	Info about the same interviewer should appear only *ONCE*.
+	
+* This excercise uses `AdventureWorksLT2019` database, not `AdventureWorks2019` - be careful
 
-<h2 align="left">ORDER BY clause</h2>
+	Write a query which will show all Customer FN/LN from table `Customers` and their respective Address ID's from table `CustomerAddress`. In case if there's more than one address for a particluar customer in the `CustomerAddress` table, choose the record with `AddressType` = 'Main Office'. Result dataset should contain only 1 row for each Customer.
 
-* In what order do records appear when executing a SQL query without ORDER BY clause?
-
-* What is the default order for ORDER BY clause?
-  * ASC
-  * DESC
- 
-* In MS SQL, can we use aliases in the ORDER BY clause explicitly?
-  * Yes
-  * No
- 
-* Can fields which were not mentioned in the SELECT list be used in the ORDER BY clause?
-  * Yes
-  * No
-
-* What can guarantee WITH TIES option added to the TOP 15 clause?
-
-<h2 align="left">Filtering in SQL queries</h2>
-
-* Can WHERE clause be applied after ORDER BY clause?
-  * Yes
-  * No
- 
-* Will "ID BETWEEN 10 AND 100" statement return records with ID equal to 10 or 100?
-  * Yes
-  * No
- 
-* Is filtering by text data case sensitive? E.g. WHERE Name = 'Ion'
-  * Case sensitive
-  * Case insensitive
- 
-* List the wildcards you've learned and explain their functionality
-
-* What is the default masks for Date formats in MS SQL? (choose 2 out of 4)
-  * 'YYYY-MM-DD'
-  * 'YYYY-DD-MM'
-  * 'MM/DD/YYYY'
-  * 'DD/MM/YYYY'
+	Don't be shy to use subqueries.
