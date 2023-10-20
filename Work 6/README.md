@@ -5,9 +5,9 @@
 Check out the following videos and answer the questions below:
 
 
-SP Basics: [YouTube](https://www.youtube.com/watch?v=fjNsRV4zLdc) or [Here]()
+SP Basics: [YouTube](https://www.youtube.com/watch?v=fjNsRV4zLdc) or [Here](https://raw.githubusercontent.com/dzubenco/sql-training/main/Work%206/Resources/SQL%20Server%20Programming%20Part%201%20-%20Stored%20Procedure%20Basics.mp4)
 
-SP with parameters: [YouTube](https://www.youtube.com/watch?v=Vs-atxMs4mw) or [Here]()
+SP with parameters: [YouTube](https://www.youtube.com/watch?v=Vs-atxMs4mw) or [Here](https://raw.githubusercontent.com/dzubenco/sql-training/main/Work%206/Resources/SQL%20Server%20Programming%20Part%202%20-%20Stored%20Procedure%20Parameters.mp4)
 
 ---
 
