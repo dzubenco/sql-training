@@ -1,48 +1,73 @@
-<h2 align="center">Work #5</h2>
+<h2 align="center">Work #7</h2>
 
 ---
 
-<h2 align="center">Exercises</h2>
+Check out the following videos and answer the questions below:
 
-* Table `HumanResources.Employee` from `AdventureWorks2019` database contains a field called `LoginID`. It is filled with the data using the pattern [db_name]\\[username] as shown at the screenshot below. Write a query which returns usernames only (data after "\\" symbol) as shown at highlighted part of the screenshot
+Variables: [YouTube](https://www.youtube.com/watch?v=NmYaOlcbfZM) or [Here](https://github.com/dzubenco/sql-training/raw/refs/heads/main/Work%207/Resources/SQL%20Server%20Programming%20Part%203%20-%20Variables.mp4)
 
-	![222](https://github.com/dzubenco/sql-training/assets/74211642/d3d993fa-0b9a-46bc-9725-095318a8f08b)
+Output Parameters & Return Values: [YouTube](https://www.youtube.com/watch?v=GvRv4V-AK70) or [Here](https://github.com/dzubenco/sql-training/raw/refs/heads/main/Work%207/Resources/SQL%20Server%20Programming%20Part%204%20-%20Output%20Parameters%20&%20Return%20Values.mp4)
 
 ---
-* Check the content of `Person.Person`, `Person.PersonPhone` and `Person.PhoneNumberType` tables from  `AdventureWorks2019` database. Write a query that shows each person's First Name, Last Name, Phone Number, but only for the recors with "Employee" Person Type and "Work" Phone Type (please do not "hardcode" the phone type, use subquery or join instead)
+
+<h2 align="center">Questions</h2>
+
+* The query below returns top 4 records from table `Employee` (`AdventureWorks2019` database)
+  
+	```
+	SELECT TOP 4 *
+	FROM HumanResources.Employee;
+	```
+
+	Please add a parameter `@Num` which can be used instead of hardcoded value and check that the query works in a database. Hint: most probably just raplacing `4` with `@Num` will not work.
+
+	Please provide the whole query as the answer.
+
 ---
-* **Prerequisite**: run the following query in the `AdventureWorks2019` database connection script:
+* Can we use a subquery in order to assign an initial value to the variable just in DECLARE statement? Please check in DB
+  
+	- [ ] Yes
+	- [ ] No
+---
+* What function can be used in case if you want to show some text output in the "Messages" tab of the script output window?
+---
+* How can you suppress the default message about how much rows have been affected by the query in the "Messages" tab of the script output window?
+
+  ![img1](https://github.com/user-attachments/assets/2a492aca-141a-46ff-a784-01272ea4f777)
+
+
+---
+* Look at the query and it's output at the screenshot below.
+
+	How do you think, what will happen if we'll try to assign the output of this query to a single variable of type int as in the script below?
+
+	```
+	DECLARE @test AS INT
 	
-	```
-	delete from Person.EmailAddress where BusinessEntityID between 286 and 298;
-	```
-	
-	Then using tables `Person.Person` and `Person.EmailAddress` write a query which will show all the fields from the `Person` table only for the entries which does not have an email set up in `EmailAddress` table.
----
-* **Prerequisite**: run the following query in AdventureWorks2019 database :
+	SELECT TOP 3 @test = BusinessEntityID
+	FROM HumanResources.Employee
+	ORDER BY BusinessEntityID DESC
+ 	```
 
-	```
-	Update HumanResources.JobCandidate set BusinessEntityID = 212 where jobCandidateId = 6;
-	```
-	
-	Table `HumanResources.JobCandidate` contains info about candidates. Entries with non-NULL `BusinessEntityID` field already have an interviewer assigned - this `BusinessEntityID` represents interviewer's ID.
+ 	![Img2](https://github.com/user-attachments/assets/63309331-872b-41c3-a0f4-b24b383c998e)
 
-	![333](https://github.com/dzubenco/sql-training/assets/74211642/3fcb4446-a872-44d3-87d7-0f1f59c260bf)
-
-	So, using the following tables:
-
-	`HumanResources.JobCandidate`
-	`HumanResources.Employee`
-	`Person.Person`
-	`Person.PersonPhone`
-	`Person.PhoneNumberType`
-
-	Write a query which returns info about all currently assigned interviewers in `JobCandidate` table: their `FirstName` and `LastName`, and a `PhoneNumber` if the type of PhoneNumber is "Work"; if it's not "Work" - default Phone Number to '8-800-555-35-35'
-	Info about the same interviewer should appear only **ONCE**.
+	- [ ] Error appears - the script is invalid to be run
+	- [ ] It will assign the value 290 to the variable
+	- [ ] It will assign the value 288 to the variable
 
 ---
-* This excercise uses `AdventureWorksLT2019` database, not `AdventureWorks2019` - be careful
+* At the previous work #6 we've created a Stored Procedure which returns some select output - you can double check it [here](https://github.com/dzubenco/sql-training/tree/main/Work%206)
 
-	Write a query which will show all Customer FN/LN from table `Customers` and their respective Address ID's from table `CustomerAddress`. In case if there's more than one address for a particluar customer in the `CustomerAddress` table, choose the record with `AddressType` = 'Main Office'. Result dataset should contain only 1 row for each Customer.
+	Now, please create a new one proc which actually soes the same but in another format:
+	
+	- takes as a parameter `@countNumber`;
+	
+	- returns you as output parameter the set of ProductId values in a single concatenated string - values should be separated by comma for the products that appear in `ProductListPriceHistory` table `@countNumber` times
+	
+	- returns you as output parameter the number of rows affected
+	
+	These two output parameters must be accessable outside of SP after it's invocation
+	
+	Please see the example at the screenshot below:
 
-	Don't be shy to use subqueries.
+	![Img3](https://github.com/user-attachments/assets/eb365515-4057-4281-a567-28ea398dc56b)
